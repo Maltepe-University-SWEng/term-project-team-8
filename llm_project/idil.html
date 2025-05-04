@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Fıkra Üretici</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-egitilmis {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn-egitilmis:hover {
+      background-color: #45a049;
+    }
+
+    .btn-yeni {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-yeni:hover {
+      background-color: #1976D2;
+    }
+
+    #fikra {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 15px;
+      font-size: 20px;
+      line-height: 1.8;
+      min-height: 200px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🤖 AI Fıkra Üretici</h1>
+    <p>İki farklı yapay zekadan fıkra üret!</p>
+
+    <div class="btn-group">
+      <button class="btn-egitilmis" onclick="fikraGetir('/fikra')">📚 Eğitilmiş Modelden</button>
+      <button class="btn-yeni" onclick="fikraGetir('/fikra_yeni')">✨ Sıfırdan Üretilmiş Modelden</button>
+    </div>
+
+    <div id="fikra">Buraya fıkra gelecek...</div>
+  </div>
+
+  <script>
+    async function fikraGetir(endpoint) {
+      const fikraDiv = document.getElementById("fikra");
+      fikraDiv.innerText = "Fıkra hazırlanıyor...";
+
+      try {
+        const response = await fetch("http://localhost:5000" + endpoint);
+        const data = await response.json();
+        fikraDiv.innerText = data.fikra;
+      } catch (error) {
+        fikraDiv.innerText = "Bir hata oluştu. Lütfen tekrar deneyin.";
+      }
+    }
+  </script>
+
+</body>
+</html>
