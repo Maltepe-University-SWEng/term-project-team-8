@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kayıt Ol</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background-color: #ffffff;
+      padding: 60px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #444;
+      letter-spacing: 1px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 12px;
+      background-color: #e6f0ff;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #888;
+    }
+
+    .gray-button {
+      width: 100%;
+      padding: 15px;
+      background-color: #eaeaea;
+      border: none;
+      border-radius: 15px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .gray-button:hover {
+      background-color: #dcdcdc;
+    }
+
+    .login-text {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .login-text a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h1>KAYIT OL</h1>
+    <input type="email" placeholder="Gmail adresi" required />
+    <input type="tel" placeholder="Telefon numarası" required />
+    <input type="password" placeholder="Şifre" required />
+    <input type="password" placeholder="Şifreyi doğrula" required />
+    <button type="submit" class="gray-button">Kayıt Ol</button>
+
+    <div class="login-text">
+      Zaten hesabın var mı? <a href="login.html">Giriş yap</a>
+    </div>
+  </div>
+</body>
+</html>
